@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="form_container">
+
+        <div class="heading">create New account</div>
+
+        <form class="form_decoration" onsubmit="event.preventDefault(); return form_validation()">
+
+            <label for="fullname">FULL NAME</label> 
+            <input class="input" type="text" name="fullname" id="fullname" placeholder="Full Name"/>
+            
+            <label for="phone">PHONE NUMBER</label> 
+            <input class="input" type="number" name="phone" id="phone" placeholder="Mobile Number"/>
+        
+            <label for="email">EMAIL ID</label>
+            <input class="input" type="text" name="email" id="email" placeholder="E-mail"/>
+            
+            <label for="password">PASSWORD</label>
+            <input class="input" type="password" name="password" id="password" placeholder="Create Password"/>       
+
+            <label for="password">CONFIRM PASSWORD</label> 
+            <input class="input" type="password" name="password" id="password_2" placeholder="Confirm Password"/>
+
+            <div class="invalid_text"></div>
+
+
+            <div>
+                <button type="submit" class="form_submission" onclick="signup()">sign up</button>
+            </div>
+              
+        </form>
+     
+    </section>
+
+    <script src="/script.js"></script>
+    <script>
+        function signup(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(email== "admin@gmail.com" && password=="admin123"){
+                window.location.assign("project02.html");
+                alert("Login successfully");
+            }
+            else{
+                alert("Invalid informations");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
